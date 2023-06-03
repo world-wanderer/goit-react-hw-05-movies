@@ -1,0 +1,17 @@
+nav {
+  color: rgb(19, 17, 17);
+  background-image: linear-gradient(to bottom, #e34a6f, #75706d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 80px;
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 500;
+  font-size: 22px;
+}
