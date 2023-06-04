@@ -1,4 +1,4 @@
-import { searchMovieByTitle } from '../components/api/api';
+import { searchMovieByTitle } from '../api/api';
 import MovieList from '../components/MovieList/MovieList';
 import SearchForm from '../components/SearchForm/SearchForm';
 import { useState, useEffect } from 'react';

@@ -1,6 +1,6 @@
 import css from './MovieDetails.module.css';
 
-import { fetchMovieDetails } from 'components/api/api';
+import { fetchMovieDetails } from 'api/api';
 import { lazy, Suspense, useEffect, useState } from 'react';
 import {
   Link,
@@ -9,6 +9,7 @@ import {
   useLocation,
   useParams,
 } from 'react-router-dom';
+import myImage from 'img/default.png';
 
 function MovieDetails() {
   const { movieId } = useParams();
@@ -36,7 +37,11 @@ function MovieDetails() {
           <div className={css.wrapper}>
             <div>
               <img
-                src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`}
+                src={
+                  movieDetails.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`
+                    : myImage
+                }
                 alt={movieDetails.title}
                 loading={String(lazy)}
                 className={css.img}

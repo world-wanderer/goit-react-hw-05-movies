@@ -1,6 +1,7 @@
 import css from './MovieList.module.css';
 import { lazy } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import myImage from 'img/default.png';
 
 function MovieList({ movies }) {
   const location = useLocation();
@@ -14,7 +15,11 @@ function MovieList({ movies }) {
               <div className={css.list_movies_card}>
                 <Link to={`/movies/${movie.id}`} state={{ from: location }}>
                   <img
-                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    src={
+                      movie.poster_path
+                        ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                        : myImage
+                    }
                     alt={movie.title}
                     loading={String(lazy)}
                   />
